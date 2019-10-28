@@ -1,0 +1,2 @@
+#define LAB8DNDGAMEDLL_API __declspec(dllexport)
+#define LAB8DNDGAMEDLL_API __declspec(dllimport)
