@@ -4,9 +4,8 @@
 #define LAB8DNDGAMEDLL_API __declspec(dllimport)
 #endif
 
-class LAB8DNDGAMEDLL_API CLab8DnDGameDll {
+class LAB8DNDGAMEDLL_API Race {
 public:
-	CLab8DnDGameDll(void);
 };
 
 extern LAB8DNDGAMEDLL_API int nLab8DnDGameDll;
