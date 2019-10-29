@@ -5,6 +5,9 @@
 #define LAB8DNDGAMEDLL_API __declspec(dllimport)
 #endif
 #include "DnDClass.h"
+//Races need a class and a race, Mainly the Race is an interface that won't be used for anything
+//Other than the character which will hold all the goodies. Evrythings very open right now and subject
+//to change
 class LAB8DNDGAMEDLL_API IRace {
 public:
 	enum EnumOfRace {Elven, Dwarf, Orc, JakobWardga};
