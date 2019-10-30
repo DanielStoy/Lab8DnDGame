@@ -6,7 +6,7 @@
 #endif
 //Put pure virtual methods up here
 class LAB8DNDGAMEDLL_API DnDClasses {
-private:
+public:
 	int damage = 0;
 	int armor = 0;
 	int health = 0;

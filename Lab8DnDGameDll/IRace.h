@@ -15,7 +15,7 @@ public:
 private:
 	int hitMod;
 	int armorMod;
-	int hitBonusMod;
+	int attackMod; //AttackBonus
 	int initBonus;
 };
 
@@ -24,6 +24,13 @@ public:
 	//This could probably be done better, as of now, the Race picks the class and the race through enums
 	//Putting them through an if Statement to give everyone their appropriate class and race
 	//Any better ideas let me know
-	Character(EnumOfRace myRace, EnumOfClass myClass) {
-	};
+	Character(EnumOfRace myRace, EnumOfClass myClass);
+
+//All stats will get added and put here for easy capture
+private:
+	DnDClasses myClass;
+	int hitPoints = 0;
+	int armor = 0;
+	int initiative = 0;
+	int attack = 0;
 };
