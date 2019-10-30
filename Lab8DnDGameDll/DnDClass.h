@@ -7,6 +7,7 @@
 //Put pure virtual methods up here
 class LAB8DNDGAMEDLL_API DnDClasses {
 public:
+	virtual ~DnDClasses() {}
 	int damage = 0;
 	int armor = 0;
 	int health = 0;
@@ -14,23 +15,23 @@ public:
 
 };
 
-class LAB8DNDGAMEDLL_API Wizard : DnDClasses {
+class LAB8DNDGAMEDLL_API Wizard : public DnDClasses {
 public:
 	Wizard();
 };
 
-class LAB8DNDGAMEDLL_API Rogue : DnDClasses{
+class LAB8DNDGAMEDLL_API Rogue : public DnDClasses{
 public:
 	Rogue();
 };
 
-class LAB8DNDGAMEDLL_API Fighter : DnDClasses {
+class LAB8DNDGAMEDLL_API Fighter : public DnDClasses {
 public:
 	Fighter();
 
 };
 
-class LAB8DNDGAMEDLL_API Cleric : DnDClasses {
+class LAB8DNDGAMEDLL_API Cleric : public DnDClasses {
 public:
 	Cleric();
 };

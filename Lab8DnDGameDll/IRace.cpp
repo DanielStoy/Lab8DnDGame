@@ -20,21 +20,22 @@ Character::Character(EnumOfRace myRace, EnumOfClass myClass) {
 		hitPoints += 3;
 		initiative += 3;
 	}
-
 	if (fighter) {
-		charClass = fighter;
-		Fighter fighter = Fighter();
+		charClass = new Fighter();
 	}
 	else if (wizard) {
-		charClass = wizard;
-		Wizard wizard = Wizard();
+		charClass = new Wizard();
 	}
 	else if (cleric) {
-		charClass = cleric;
-		Cleric cleric = Cleric();
+		charClass = new Cleric();
 	}
 	else {
-		charClass = rogue;
-		Rogue rogue = Rogue();
+		charClass = new Rogue();
 	}
+
+
+	hitPoints += charClass->health;
+	armor += charClass->armor;
+	attack += charClass->damage;
+	initiative += charClass->inititive;
 }

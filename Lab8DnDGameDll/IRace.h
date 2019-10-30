@@ -23,7 +23,7 @@ public:
 
 //All stats will get added and put here for easy capture
 private:
-	EnumOfClass charClass;
+	DnDClasses* charClass;
 	int hitPoints = 0;
 	int armor = 0;
 	int initiative = 0;
