@@ -153,6 +153,11 @@
   <ItemGroup>
     <ClCompile Include="Lab8DnDGameEXE.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lab8DnDGameDll\Lab8DnDGameDll.vcxproj">
+      <Project>{b0c44266-6a98-4e32-8e4b-d7db529420e4}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

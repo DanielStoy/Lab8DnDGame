@@ -10,8 +10,8 @@
 //to change
 class LAB8DNDGAMEDLL_API IRace {
 public:
-	enum EnumOfRace {Elven, Dwarf, Orc, JakobWardga};
-	enum EnumOfClass {fighter, wizard, rogue, cleric};
+	enum EnumOfRace {Elven = 0, Dwarf = 1, Orc = 2, JakobWardga = 3};
+	enum EnumOfClass {fighter = 0, wizard = 1, rogue = 2, cleric = 3};
 };
 
 class LAB8DNDGAMEDLL_API Character : IRace {

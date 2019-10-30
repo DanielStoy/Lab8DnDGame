@@ -5,7 +5,8 @@
 #include <ioStream>
 
 int main() {
-	std::cout << "Hello world";
-	return 0;
+	IRace::EnumOfClass myClass = static_cast<IRace::EnumOfClass>(1);
+	IRace::EnumOfRace myRace = static_cast<IRace::EnumOfRace>(3);
+	Character myCharacter(myRace, myClass);
 	
 }
