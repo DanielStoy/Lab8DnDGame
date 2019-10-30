@@ -15,18 +15,22 @@ public:
 };
 
 class LAB8DNDGAMEDLL_API Wizard : DnDClasses {
+public:
 	Wizard();
 };
 
 class LAB8DNDGAMEDLL_API Rogue : DnDClasses{
+public:
 	Rogue();
 };
 
 class LAB8DNDGAMEDLL_API Fighter : DnDClasses {
+public:
 	Fighter();
 
 };
 
 class LAB8DNDGAMEDLL_API Cleric : DnDClasses {
+public:
 	Cleric();
 };

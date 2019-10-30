@@ -11,12 +11,7 @@
 class LAB8DNDGAMEDLL_API IRace {
 public:
 	enum EnumOfRace {Elven, Dwarf, Orc, JakobWardga};
-	enum EnumOfClass {Fighter, Wizard, Rogue, Cleric};
-private:
-	int hitMod;
-	int armorMod;
-	int attackMod; //AttackBonus
-	int initBonus;
+	enum EnumOfClass {fighter, wizard, rogue, cleric};
 };
 
 class LAB8DNDGAMEDLL_API Character : IRace {
@@ -28,7 +23,7 @@ public:
 
 //All stats will get added and put here for easy capture
 private:
-	DnDClasses myClass;
+	EnumOfClass charClass;
 	int hitPoints = 0;
 	int armor = 0;
 	int initiative = 0;
