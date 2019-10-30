@@ -2,30 +2,30 @@
 #include "framework.h"
 
 Wizard::Wizard() {
-	damage = 10;
-	armor = 2;
-	health = 3;
+	damage = 3;
+	armor = 10;
+	health = 9;
 	inititive = 4;
 
 }
 
 Rogue::Rogue() {
-	damage = 7;
-	armor = 3;
-	health = 3;
-	inititive = 6;
+	damage = 10;
+	armor = 14;
+	health = 10;
+	inititive = 3;
 }
 
 Fighter::Fighter() {
-	damage = 3;
-	armor = 9;
-	health = 9;
+	damage = 7;
+	armor = 16;
+	health = 14;
 	inititive = 3;
 }
 
 Cleric::Cleric() {
-	damage = 0;
-	armor = 0;
-	health = 0;
+	damage = -5;
+	armor = 14;
+	health = 15;
 	inititive = 0;
 }
