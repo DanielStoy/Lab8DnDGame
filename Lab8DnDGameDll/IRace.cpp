@@ -2,6 +2,7 @@
 #include "framework.h"
 #include "DnDClass.h"
 
+//Calculates all of our stats in one go, stores them in character
 Character::Character(EnumOfRace myRace, EnumOfClass myClass) {
 	if (Elven) {
 		attack += 3;
