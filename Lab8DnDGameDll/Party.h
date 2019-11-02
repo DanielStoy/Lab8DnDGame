@@ -10,7 +10,7 @@
 class LAB8DNDGAMEDLL_API Party {
 public:
 	Party(std::vector<Character> ourParty) {
+		theTeam = ourParty;
 	};
-private:
 	std::vector<Character> theTeam;
 };

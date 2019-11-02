@@ -5,27 +5,20 @@
 #define LAB8DNDGAMEDLL_API __declspec(dllimport)
 #endif
 #include "DnDClass.h"
-//Races need a class and a race, Mainly the Race is an interface that won't be used for anything
-//Other than the character which will hold all the goodies. Evrythings very open right now and subject
-//to change
 class LAB8DNDGAMEDLL_API IRace {
 public:
 	enum EnumOfRace {Elven = 0, Dwarf = 1, Orc = 2, JakobWardga = 3};
 	enum EnumOfClass {fighter = 0, wizard = 1, rogue = 2, cleric = 3};
 };
 
+//The character holds and creates the class, allowing for easy disposal.
+//It also factors in the race through an enum
+//Almost nothing will be done here, but it does make disposal easier
+//Attacking and defending, along with special attacks will be done in the class method
 class LAB8DNDGAMEDLL_API Character : IRace {
 public:
-	//This could probably be done better, as of now, the Race picks the class and the race through enums
-	//Putting them through an if Statement to give everyone their appropriate class and race
-	//Any better ideas let me know
 	Character(EnumOfRace myRace, EnumOfClass myClass);
 
-//All stats will get added and put here for easy capture
 private:
 	DnDClasses* charClass;
-	int hitPoints = 0;
-	int armor = 0;
-	int initiative = 0;
-	int attack = 0;
 };

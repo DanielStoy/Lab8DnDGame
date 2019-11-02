@@ -4,23 +4,6 @@
 
 //Calculates all of our stats in one go, stores them in character
 Character::Character(EnumOfRace myRace, EnumOfClass myClass) {
-	if (Elven) {
-		attack += 3;
-		initiative += 3;
-	}
-	else if (Orc) {
-		hitPoints += 3;
-		attack += 0;
-	}
-	else if (Dwarf) {
-		armor += 3;
-		hitPoints += 3;
-
-	}
-	else {
-		hitPoints += 3;
-		initiative += 3;
-	}
 	if (fighter) {
 		charClass = new Fighter();
 	}
@@ -33,10 +16,21 @@ Character::Character(EnumOfRace myRace, EnumOfClass myClass) {
 	else {
 		charClass = new Rogue();
 	}
+	if (Elven) {
+		charClass->damage += 3;
+		charClass->inititive += 3;
+	}
+	else if (Orc) {
+		charClass->health += 3;
+		charClass->damage += 0;
+	}
+	else if (Dwarf) {
+		charClass->armor += 3;
+		charClass->health += 3;
 
-
-	hitPoints += charClass->health;
-	armor += charClass->armor;
-	attack += charClass->damage;
-	initiative += charClass->inititive;
+	}
+	else {
+		charClass->health += 3;
+		charClass->inititive += 3;
+	}
 }

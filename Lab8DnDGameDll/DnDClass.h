@@ -4,7 +4,12 @@
 #else
 #define LAB8DNDGAMEDLL_API __declspec(dllimport)
 #endif
+
+#include "Party.h"
+//This is where all of our attacking and defending will occur
+//Defend will most likely always do the same thing, so put it up top
 //Put pure virtual methods up here
+//All of our stats are held up top
 class LAB8DNDGAMEDLL_API DnDClasses {
 public:
 	virtual ~DnDClasses() {}
