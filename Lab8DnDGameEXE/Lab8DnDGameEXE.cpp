@@ -1,7 +1,6 @@
 
 #include "../../Lab8DnDGame/Lab8DnDGameDll/DnDClass.h"
 #include "../../Lab8DnDGame/Lab8DnDGameDll/IRace.h"
-#include "../../Lab8DnDGame/Lab8DnDGameDll/Party.h"
 #include <ioStream>
 #include <vector>
 
@@ -17,6 +16,6 @@ int main() {
 		std::cin >> classNum;
 		startParty.push_back(Character(static_cast<IRace::EnumOfRace>(raceNum), static_cast<IRace::EnumOfClass>(classNum)));
 	}
-	Party myParty(startParty);
+
 	
 }

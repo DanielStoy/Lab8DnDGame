@@ -165,13 +165,11 @@
     <ClInclude Include="DnDClass.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="IRace.h" />
-    <ClInclude Include="Party.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DnDClass.cpp" />
     <ClCompile Include="IRace.cpp" />
-    <ClCompile Include="Party.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
