@@ -29,3 +29,24 @@ Cleric::Cleric() {
 	health = 15;
 	inititive = 0;
 }
+
+Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
+	if (fighter) {
+		charClass = new Fighter();
+	}
+	else if (wizard) {
+		charClass = new Wizard();
+	}
+	else if (rogue) {
+		charClass = new Rogue();
+	}
+	else {
+		charClass = new Cleric();
+	}
+
+	charRace = new IRace((int)myRace);
+	charClass->armor += charRace->armorMod;
+	charClass->damage += charRace->damageMod;
+	charClass->health += charRace->healthMod;
+	charClass->inititive += charRace->initMod;
+}

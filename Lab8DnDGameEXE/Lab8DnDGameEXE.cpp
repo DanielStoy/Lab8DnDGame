@@ -14,8 +14,7 @@ int main() {
 		std::cin >> raceNum;
 		std::cout << "Enter your class: 0 = Fighter, 1 = Wizard, 3 = Rogue, 4 = Cleric" << std::endl;
 		std::cin >> classNum;
-		startParty.push_back(Character(static_cast<IRace::EnumOfRace>(raceNum), static_cast<IRace::EnumOfClass>(classNum)));
+		startParty.push_back(Character(static_cast<DnDClasses::EnumOfClass>(classNum), static_cast<DnDClasses::EnumOfRace>(raceNum)));
 	}
-
 	
 }
