@@ -53,6 +53,11 @@ Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
 	charClass->inititive += charRace->initMod;
 }
 
+//rogue special -> attacks lowest health enemy 
+//fighter special -> buffs dmg -> dmg = dmg + 1/2 armor
+//wizard special -> attack the highest health enemy 
+//cleric special -> heals whole team for 1/2 their heal- > +2 to dmg after tho
+
 int DnDClasses::RollD20()
 {
 	srand(time(NULL));
@@ -60,5 +65,6 @@ int DnDClasses::RollD20()
 }
 
 Party attack(Party enemies) {
+
 	return enemies;
 }
