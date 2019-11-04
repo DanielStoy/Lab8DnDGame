@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
+Character::Character() {
+
+}
+std::vector<Character> Character::attack(std::vector<Character> enemies) {
+	return enemies;
+}
 
 Wizard::Wizard() {
 	damage = 3;

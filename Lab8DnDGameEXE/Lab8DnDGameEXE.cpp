@@ -40,6 +40,10 @@ int main() {
 			//see which party is attacking, going to be messy but would be less messy with a dictionary
 			for (int i = 0; i < myParty.AdventuringParty.size(); i++) {
 				if (refillable.top().id == myParty.AdventuringParty.at(i).id) {
+					enemyParty.AdventuringParty = refillable.top().attack(enemyParty.AdventuringParty);
+				}
+				else {
+				
 				}
 			}
 
