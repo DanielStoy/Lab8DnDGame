@@ -154,15 +154,56 @@ std::vector<Character> Fighter::attack(std::vector<Character> enemies)
 
 std::vector<Character> Fighter::specialAttack(std::vector<Character> enemies)
 {
+	this->damage = this->damage + 4;
 	return enemies;
 }
 
 std::vector<Character> Cleric::attack(std::vector<Character> enemies)
 {
+	if (enemies.size() <= 0)
+	{
+		return enemies;
+	}
+
+	int locationOfLowest = 0;
+	int lowestHealth = 100;
+
+	//search for highest health enemy
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		if (enemies[i].health < lowestHealth) {
+			locationOfLowest = i;
+			lowestHealth = enemies[i].health;
+		}
+	}
+
+	enemies[locationOfLowest].health -= this->damage;
+
+	if (enemies[locationOfLowest].health < 1) {
+		enemies.erase(enemies.begin() + locationOfLowest);
+	}
+
 	return enemies;
 }
 
 std::vector<Character> Cleric::specialAttack(std::vector<Character> enemies)
 {
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		enemies[i].health += (this->damage / 2);
+
+		if (enemies[i].health < 1)
+		{
+			enemies.erase(enemies.begin() + i);
+		}
+	}
+
+	this->damage = this->damage + 2;
+
 	return enemies;
 }
