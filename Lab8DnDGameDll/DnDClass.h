@@ -19,6 +19,7 @@ public:
 	int armor = 0;
 	int health = 0;
 	int inititive = 0;
+	int charge = 0;
 	int RollD20();
 };
 

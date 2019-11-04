@@ -9,6 +9,7 @@ Wizard::Wizard() {
 	armor = 10;
 	health = 9;
 	inititive = 4;
+	charge = 3;
 
 }
 
@@ -17,6 +18,7 @@ Rogue::Rogue() {
 	armor = 14;
 	health = 10;
 	inititive = 3;
+	charge = 0;
 }
 
 Fighter::Fighter() {
@@ -24,6 +26,7 @@ Fighter::Fighter() {
 	armor = 16;
 	health = 14;
 	inititive = 3;
+	charge = 2;
 }
 
 Cleric::Cleric() {
@@ -31,6 +34,7 @@ Cleric::Cleric() {
 	armor = 14;
 	health = 15;
 	inititive = 0;
+	charge = 0;
 }
 
 Character::Character(EnumOfClass myClass, EnumOfRace myRace, int ID) {
@@ -106,17 +110,18 @@ std::vector<Character> Wizard::specialAttack(std::vector<Character> enemies)
 	//declare variables
 	int locationOfHighest = 0;
 	int highestHealth = 0;
+	int holdRoll;
 
 	//search for highest health enemy
 	for (int i = 0; i < enemies.size(); i++)
 	{
 		if (enemies[i].health > highestHealth) {
 			locationOfHighest = i;
+			highestHealth = enemies[i].health;
 		}
 	}
 
 	//roll that roll
-	int holdRoll;
 	holdRoll = enemies[locationOfHighest].RollD20();
 
 	//deal that damage if roll is successful
@@ -135,30 +140,170 @@ std::vector<Character> Wizard::specialAttack(std::vector<Character> enemies)
 
 std::vector<Character> Rogue::attack(std::vector<Character> enemies)
 {
+	//checks if there are enemies
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+
+	//declare dem variables
+	int lastMember = enemies.size() - 1;
+	int holdRoll;
+
+	//roll that roll
+	holdRoll = enemies[lastMember].RollD20();
+
+	//deal damage?
+	if (holdRoll >= enemies[lastMember].armor) {
+		enemies[lastMember].health -= this->damage;
+	}
+
+	//dead?
+	if (enemies[lastMember].health < 1) {
+		enemies.erase(enemies.begin() + lastMember);
+	}
+
+	//return enemies
 	return enemies;
 }
 
 std::vector<Character> Rogue::specialAttack(std::vector<Character> enemies)
 {
+
+	//checks if there are enemies
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+	//declare variables
+	int locationOfLowest = 0;
+	int lowestHealth = 0;
+	int holdRoll;
+
+	//search for highest health enemy
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		if (enemies[i].health < lowestHealth) {
+			locationOfLowest = i;
+			lowestHealth = enemies[i].health;
+		}
+	}
+
+	//roll that roll
+	holdRoll = enemies[locationOfLowest].RollD20();
+
+	//deal that damage if roll is successful
+	if (holdRoll >= enemies[locationOfLowest].armor) {
+		enemies[locationOfLowest].health -= (this->damage + this->inititive);
+	}
+
+	//check if highest health enemy is still alive
+	if (enemies[locationOfLowest].health < 1) {
+		enemies.erase(enemies.begin() + locationOfLowest);
+	}
+
+	//return all the enemies
+	return enemies;
+
 	return enemies;
 }
 
 std::vector<Character> Fighter::attack(std::vector<Character> enemies)
 {
+	//checks if there are enemies
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+
+	//declare dem variables
+	int firstMember = 0;
+	int holdRoll;
+
+	//roll that roll
+	holdRoll = enemies[firstMember].RollD20();
+
+	//deal damage?
+	if (holdRoll >= enemies[firstMember].armor) {
+		enemies[firstMember].health -= this->damage;
+	}
+
+	//dead?
+	if (enemies[firstMember].health < 1) {
+		enemies.erase(enemies.begin() + firstMember);
+	}
+
+	//return enemies
 	return enemies;
 }
 
 std::vector<Character> Fighter::specialAttack(std::vector<Character> enemies)
 {
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+	
+	int firstMember = 0;
+	int holdRoll = enemies[firstMember].RollD20();
+	if (holdRoll >= enemies[firstMember].armor)
+	{
+		enemies[firstMember].health = this->damage + 6;
+	}
+
+	if (enemies[firstMember].health < 1)
+	{
+		enemies.erase(enemies.begin() + firstMember);
+	}
 	return enemies;
 }
 
 std::vector<Character> Cleric::attack(std::vector<Character> enemies)
 {
+	if (enemies.size() <= 0)
+	{
+		return enemies;
+	}
+
+	int locationOfLowest = 0;
+	int lowestHealth = 100;
+
+	//search for lowest health enemy
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		if (enemies[i].health < lowestHealth) {
+			locationOfLowest = i;
+			lowestHealth = enemies[i].health;
+		}
+	}
+
+	enemies[locationOfLowest].health -= this->damage;
+
+	if (enemies[locationOfLowest].health < 1) {
+		enemies.erase(enemies.begin() + locationOfLowest);
+	}
+
 	return enemies;
 }
 
 std::vector<Character> Cleric::specialAttack(std::vector<Character> enemies)
 {
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		enemies[i].health += (this->damage / 2);
+
+		if (enemies[i].health < 1)
+		{
+			enemies.erase(enemies.begin() + i);
+		}
+	}
+
+	this->damage = this->damage + 2;
+
 	return enemies;
 }
