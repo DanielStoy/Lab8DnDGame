@@ -33,7 +33,7 @@ Cleric::Cleric() {
 	inititive = 0;
 }
 
-Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
+Character::Character(EnumOfClass myClass, EnumOfRace myRace, int ID) {
 	if (fighter) {
 		charClass = new Fighter();
 	}
@@ -52,6 +52,7 @@ Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
 	charClass->damage += charRace->damageMod;
 	charClass->health += charRace->healthMod;
 	charClass->inititive += charRace->initMod;
+	id = ID;
 }
 
 int DnDClasses::RollD20()

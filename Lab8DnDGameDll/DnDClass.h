@@ -24,9 +24,10 @@ public:
 
 class LAB8DNDGAMEDLL_API Character : public DnDClasses { //Queen
 public:
-	Character(EnumOfClass myClass, EnumOfRace myRace);
+	Character(EnumOfClass myClass, EnumOfRace myRace, int ID);
 	DnDClasses* charClass;
 	IRace* charRace;
+	int id;
 };
 
 //peasants
