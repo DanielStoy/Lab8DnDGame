@@ -53,7 +53,7 @@ Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
 	charClass->inititive += charRace->initMod;
 }
 
-int Character::RollD20()
+int DnDClasses::RollD20()
 {
 	srand(time(NULL));
 	return rand() % 20 + 1;

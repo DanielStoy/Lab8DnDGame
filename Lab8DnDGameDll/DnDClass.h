@@ -20,6 +20,8 @@ public:
 	int health = 0;
 	int inititive = 0;
 
+private:
+	int RollD20();
 };
 
 class LAB8DNDGAMEDLL_API Character : public DnDClasses { //Queen
