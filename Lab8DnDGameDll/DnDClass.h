@@ -35,21 +35,28 @@ public:
 class LAB8DNDGAMEDLL_API Wizard : public DnDClasses {
 public:
 	std::vector<Character> attack(std::vector<Character> enemies);
+	std::vector<Character> specialAttack(std::vector<Character> enemies);
 	Wizard();
 };
 
 class LAB8DNDGAMEDLL_API Rogue : public DnDClasses{
 public:
+	std::vector<Character> attack(std::vector<Character> enemies);
+	std::vector<Character> specialAttack(std::vector<Character> enemies);
 	Rogue();
 };
 
 class LAB8DNDGAMEDLL_API Fighter : public DnDClasses {
 public:
+	std::vector<Character> attack(std::vector<Character> enemies);
+	std::vector<Character> specialAttack(std::vector<Character> enemies);
 	Fighter();
 
 };
 
 class LAB8DNDGAMEDLL_API Cleric : public DnDClasses {
 public:
+	std::vector<Character> attack(std::vector<Character> enemies);
+	std::vector<Character> specialAttack(std::vector<Character> enemies);
 	Cleric();
 };
