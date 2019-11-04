@@ -53,10 +53,10 @@ Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
 	charClass->inititive += charRace->initMod;
 }
 
-//rogue special -> attacks lowest health enemy 
-//fighter special -> buffs dmg -> dmg = dmg + 1/2 armor
-//wizard special -> attack the highest health enemy 
-//cleric special -> heals whole team for 1/2 their heal- > +2 to dmg after tho
+//rogue special   -> attacks lowest health enemy	     -> dmg = dmg - initiative					--> charge initial: 0		--> charge to use: 4
+//fighter special -> buffs dmg		                     -> dmg = dmg + 1/2 armor					--> charge initial: 2		--> charge to use: 2
+//wizard special -> attack the highest health enemy	     -> dmg = dmg + initiative					--> charge initial: 3		--> charge to use: 4
+//cleric special -> heals whole team					 -> dmg = dmg /2 ... after: dmg = dmg - 2   --> charge initial: 0		--> charge to use: 3
 
 int DnDClasses::RollD20()
 {
