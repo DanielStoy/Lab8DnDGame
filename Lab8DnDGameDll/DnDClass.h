@@ -14,7 +14,6 @@ class LAB8DNDGAMEDLL_API DnDClasses { //king
 public:
 	enum EnumOfRace { elven, orc, dwarf, human};
 	enum EnumOfClass {wizard, rogue, fighter, cleric};
-	virtual std::vector<Character> attack(std::vector<Character> enemies);
 	virtual ~DnDClasses() {}
 	int damage = 0;
 	int armor = 0;

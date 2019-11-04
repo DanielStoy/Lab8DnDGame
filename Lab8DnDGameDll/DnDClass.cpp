@@ -60,10 +60,6 @@ int DnDClasses::RollD20()
 	return rand() % 20 + 1;
 }
 
-std::vector<Character> DnDClasses::attack(std::vector<Character> enemies) {
-	return enemies;
-}
-
 //rogue regular -> deal damage to last enemy in vector
 //fighter regular -> deal damage to first enemy in vector
 //wizard regular -> deal damage to all enemies
@@ -91,7 +87,7 @@ std::vector<Character> Wizard::attack(std::vector<Character> enemies)
 		}
 		if (enemies[i].health < 1)
 		{
-			enemies.erase(enemies.begin + i);
+			enemies.erase(enemies.begin() + i);
 		}
 	}
 	return enemies;
@@ -129,7 +125,7 @@ std::vector<Character> Wizard::specialAttack(std::vector<Character> enemies)
 
 	//check if highest health enemy is still alive
 	if (enemies[locationOfHighest].health < 1) {
-		enemies.erase(enemies.begin + locationOfHighest);
+		enemies.erase(enemies.begin() + locationOfHighest);
 	}
 
 	//return all the enemies
@@ -138,24 +134,30 @@ std::vector<Character> Wizard::specialAttack(std::vector<Character> enemies)
 
 std::vector<Character> Rogue::attack(std::vector<Character> enemies)
 {
+	return enemies;
 }
 
 std::vector<Character> Rogue::specialAttack(std::vector<Character> enemies)
 {
+	return enemies;
 }
 
 std::vector<Character> Fighter::attack(std::vector<Character> enemies)
 {
+	return enemies;
 }
 
 std::vector<Character> Fighter::specialAttack(std::vector<Character> enemies)
 {
+	return enemies;
 }
 
 std::vector<Character> Cleric::attack(std::vector<Character> enemies)
 {
+	return enemies;
 }
 
 std::vector<Character> Cleric::specialAttack(std::vector<Character> enemies)
 {
+	return enemies;
 }
