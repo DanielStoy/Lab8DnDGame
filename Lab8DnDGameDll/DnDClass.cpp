@@ -1,5 +1,7 @@
 #include "DnDClass.h"
 #include "framework.h"
+#include <stdlib.h>
+#include <time.h>
 
 Wizard::Wizard() {
 	damage = 3;
@@ -49,4 +51,10 @@ Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
 	charClass->damage += charRace->damageMod;
 	charClass->health += charRace->healthMod;
 	charClass->inititive += charRace->initMod;
+}
+
+int Character::RollD20()
+{
+	srand(time(NULL));
+	return rand() % 20 + 1;
 }

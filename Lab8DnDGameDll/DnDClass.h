@@ -27,6 +27,9 @@ public:
 	Character(EnumOfClass myClass, EnumOfRace myRace);
 	DnDClasses* charClass;
 	IRace* charRace;
+
+private:
+	int RollD20();
 };
 
 //peasants
