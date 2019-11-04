@@ -9,6 +9,7 @@ Wizard::Wizard() {
 	armor = 10;
 	health = 9;
 	inititive = 4;
+	charge = 3;
 
 }
 
@@ -17,6 +18,7 @@ Rogue::Rogue() {
 	armor = 14;
 	health = 10;
 	inititive = 3;
+	charge = 0;
 }
 
 Fighter::Fighter() {
@@ -24,6 +26,7 @@ Fighter::Fighter() {
 	armor = 16;
 	health = 14;
 	inititive = 3;
+	charge = 2;
 }
 
 Cleric::Cleric() {
@@ -31,6 +34,7 @@ Cleric::Cleric() {
 	armor = 14;
 	health = 15;
 	inititive = 0;
+	charge = 0;
 }
 
 Character::Character(EnumOfClass myClass, EnumOfRace myRace) {
@@ -111,6 +115,7 @@ std::vector<Character> Wizard::specialAttack(std::vector<Character> enemies)
 	{
 		if (enemies[i].health > highestHealth) {
 			locationOfHighest = i;
+			highestHealth = enemies[i].health;
 		}
 	}
 
