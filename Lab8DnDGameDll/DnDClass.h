@@ -6,7 +6,6 @@
 #endif
 #include <vector>
 #include "IRace.h"
-#include "Party.h"
 //This is where all of our attacking and defending will occur
 //Defend will most likely always do the same thing, so put it up top
 //Put pure virtual methods up here
@@ -15,7 +14,6 @@ class LAB8DNDGAMEDLL_API DnDClasses { //king
 public:
 	enum EnumOfRace { elven, orc, dwarf, human};
 	enum EnumOfClass {wizard, rogue, fighter, cleric};
-	Party attack(Party enemies);
 	virtual ~DnDClasses() {}
 	int damage = 0;
 	int armor = 0;
@@ -56,3 +54,4 @@ class LAB8DNDGAMEDLL_API Cleric : public DnDClasses {
 public:
 	Cleric();
 };
+#include "Party.h"

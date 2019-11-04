@@ -58,7 +58,3 @@ int DnDClasses::RollD20()
 	srand(time(NULL));
 	return rand() % 20 + 1;
 }
-
-Party attack(Party enemies) {
-	return enemies;
-}
