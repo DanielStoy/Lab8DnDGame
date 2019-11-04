@@ -20,6 +20,8 @@ public:
 	int health = 0;
 	int inititive = 0;
 
+
+
 private:
 	int RollD20();
 };
@@ -29,9 +31,6 @@ public:
 	Character(EnumOfClass myClass, EnumOfRace myRace);
 	DnDClasses* charClass;
 	IRace* charRace;
-
-private:
-	int RollD20();
 };
 
 //peasants
