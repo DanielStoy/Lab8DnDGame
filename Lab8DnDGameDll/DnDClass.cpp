@@ -2,6 +2,7 @@
 #include "framework.h"
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 
 Wizard::Wizard() {
 	damage = 3;
@@ -59,6 +60,29 @@ int DnDClasses::RollD20()
 	return rand() % 20 + 1;
 }
 
-Party attack(Party enemies) {
+std::vector<Character> DnDClasses::attack(std::vector<Character> enemies) {
+	return enemies;
+}
+
+std::vector<Character> Wizard::attack(std::vector<Character> enemies)
+{
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+
+	int holdRoll;
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		holdRoll = enemies[i].RollD20();
+		if (holdRoll >= enemies[i].armor)
+		{
+			enemies[i].health -= (this->damage);
+		}
+		if (enemies[i].health < 1)
+		{
+			enemies.erase(enemies.begin + i);
+		}
+	}
 	return enemies;
 }
