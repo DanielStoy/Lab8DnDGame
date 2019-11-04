@@ -238,7 +238,22 @@ std::vector<Character> Fighter::attack(std::vector<Character> enemies)
 
 std::vector<Character> Fighter::specialAttack(std::vector<Character> enemies)
 {
-	this->damage = this->damage + 4;
+	if (enemies.size() == 0)
+	{
+		return enemies;
+	}
+	
+	int firstMember = 0;
+	int holdRoll = enemies[firstMember].RollD20();
+	if (holdRoll >= enemies[firstMember].armor)
+	{
+		enemies[firstMember].health = this->damage + 6;
+	}
+
+	if (enemies[firstMember].health < 1)
+	{
+		enemies.erase(enemies.begin() + firstMember);
+	}
 	return enemies;
 }
 
@@ -252,7 +267,7 @@ std::vector<Character> Cleric::attack(std::vector<Character> enemies)
 	int locationOfLowest = 0;
 	int lowestHealth = 100;
 
-	//search for highest health enemy
+	//search for lowest health enemy
 	for (int i = 0; i < enemies.size(); i++)
 	{
 		if (enemies[i].health < lowestHealth) {
