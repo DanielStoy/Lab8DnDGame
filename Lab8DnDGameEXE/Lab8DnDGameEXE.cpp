@@ -13,7 +13,7 @@ Party partyCreator(std::vector<int> &ids) {
 	std::vector<Character> tempParty;
 	for (int i = 0; i < 4; i++) {
 		std::cout << "Spot: " + std::to_string(4 - i) << std::endl;
-		std::cout << "Enter your Race: 0 = Elven, 1 = Dwarf, 3 = Orc, 4 = Jakob Wardega" << std::endl;
+		std::cout << "Enter your Race: 0 = Elven, 1 = Orc, 3 = Dwarf, 4 = Human" << std::endl;
 		std::cin >> raceNum;
 		std::cout << std::endl;
 		std::cout << "Enter your class: 0 = Fighter, 1 = Wizard, 3 = Rogue, 4 = Cleric" << std::endl;
@@ -40,16 +40,21 @@ int main() {
 			//see which party is attacking, going to be messy but would be less messy with a dictionary
 			for (int i = 0; i < myParty.AdventuringParty.size(); i++) {
 				if (refillable.top().id == myParty.AdventuringParty.at(i).id) {
-					enemyParty.AdventuringParty = refillable.top().attack(enemyParty.AdventuringParty);
+					enemyParty.AdventuringParty = refillable.top().charClass->attack(enemyParty.AdventuringParty);
 				}
 				else {
-				
+					myParty.AdventuringParty = refillable.top().charClass->attack(myParty.AdventuringParty);
 				}
 			}
-
-			
-			
+			refillable.pop();
 		}
+	}
+
+	if (myParty.AdventuringParty.size() > 0) {
+		std::cout << "Your party won!" << std::endl;
+	}
+	else {
+		std::cout << "enemy Party won!" << std::endl;
 	}
 	
 }

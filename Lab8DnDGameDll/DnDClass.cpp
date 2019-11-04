@@ -7,6 +7,7 @@ Character::Character() {
 
 }
 std::vector<Character> Character::attack(std::vector<Character> enemies) {
+	std::cout << "didn't work boi" << std::endl;
 	return enemies;
 }
 
